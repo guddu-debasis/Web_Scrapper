@@ -17,7 +17,11 @@ app = FastAPI(title="AI RAG Summarizer")
 # Essential for allowing your browser UI to call your Python API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For production, replace "*" with your specific domain
+    allow_origins=[
+        "http://localhost:8000",
+        "https://web-scrapper-o1vg.onrender.com",
+        "*"
+        ],  # For production, replace "*" with your specific domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
